@@ -75,7 +75,7 @@ export const routes: Routes =[
 
        },
      {path: 'favtatie', component:FavtatieComponent },
-      { path:'datels/:id' ,component: DatelsComponent  },
+      { path:'datels/:id' ,component: DatelsComponent,data: { renderMode: 'server' }  },
 
         {path: '**' ,component:NotfoundComponent},
 
