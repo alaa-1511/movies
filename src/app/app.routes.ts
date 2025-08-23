@@ -42,8 +42,8 @@ export const routes: Routes =[
       {path:'', component: BlankLayoutComponent, children: [
   {path: 'home', component: HomeComponent , children: [
     {path: '', redirectTo: 'trindy', pathMatch: 'full'},
-    {path: 'trindy', component: TrindyComponent},
-    {path: 'puplar', component: PuplarComponent}
+      {path: 'trindy', component: TrindyComponent},
+      {path: 'puplar', component: PuplarComponent}
   ]},
   {path: 'tvshow', component: TvshowComponent , children: [
     {path: '', redirectTo: 'action', pathMatch: 'full'},

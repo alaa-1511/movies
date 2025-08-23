@@ -4,11 +4,11 @@ import { FormsModule } from "@angular/forms";
 
 import { MoviesService } from '../home/movies.service';
 import { Imovies } from '../home/imovies';
-import { HomeComponent } from "../home/home.component";
+
 
 @Component({
   selector: 'app-tvshow',
-  imports: [RouterLink, RouterOutlet, RouterLinkActive, FormsModule, HomeComponent],
+  imports: [RouterLink, RouterOutlet, RouterLinkActive, FormsModule],
   templateUrl: './tvshow.component.html',
   styleUrl: './tvshow.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -19,7 +19,7 @@ export class TvshowComponent implements OnInit {
     moviesTrending: Imovies[] = [];
 
 
-    
+
 
     getTrendingMovies(): void {
       this.moviesService.gettrendy().subscribe({
