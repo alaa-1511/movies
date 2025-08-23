@@ -34,7 +34,7 @@ import { PuplarComponent } from './featuers/home/puplar/puplar.component';
 
 
 export const routes: Routes =[
-       {path: '', redirectTo: 'home', pathMatch: 'full'},
+       {path: '', redirectTo: 'register', pathMatch: 'full'},
        {path:'', component: AuthLayoutComponent ,children: [
        {path: 'login', component: LoginComponent},
        {path: 'register', component: RegisterComponent},
@@ -66,7 +66,7 @@ export const routes: Routes =[
     {path: 'animation', component: AnimationComponent},
     {path: 'war', component: WarComponent},
     {path: 'western', component: WesternComponent},
-      
+
 
 
   ]},
