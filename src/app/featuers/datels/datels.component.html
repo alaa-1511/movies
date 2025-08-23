@@ -1,0 +1,57 @@
+<div class="relative w-full h-screen pb-52 text-white">
+
+  <img
+    [src]="'https://image.tmdb.org/t/p/w1280' + moviesdetails.backdrop_path"
+    alt="{{ moviesdetails.title }}"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+
+
+  <div class="relative z-10 max-w-6xl mx-auto flex pt-15  md:flex-row items-center gap-8 ">
+
+    <div class="flex-shrink-0">
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500' + moviesdetails.poster_path"
+        alt="{{ moviesdetails.title }}"
+        class="rounded-2xl shadow-lg w-0 md:w-80  sm:w-64 "
+      />
+    </div>
+
+  
+    <div class="space-y-12 ">
+      <h1 class="text-4xl md:text-5xl font-bold  md:text-start text-center ">{{ moviesdetails.title }}</h1>
+      <p class="text-gray-300 text-lg">{{ moviesdetails.overview }}</p>
+
+     <div class="grid grid-cols-2 gap-4 text-sm text-gray-200">
+  <p>
+    <i class="fa-solid fa-calendar-days text-red-400 mr-2"></i>
+    <span class="font-bold">Release Date:</span> {{ moviesdetails.release_date }}
+  </p>
+
+  <p>
+    <i class="fa-solid fa-language text-blue-400 mr-2"></i>
+    <span class="font-bold">Original Language:</span> {{ moviesdetails.original_language }}
+  </p>
+
+  <p>
+    <i class="fa-solid fa-star text-yellow-400 mr-2"></i>
+    <span class="font-bold">Rating:</span>
+    {{ moviesdetails.vote_average }} / 10 ({{ moviesdetails.vote_count }} votes)
+  </p>
+
+  <p>
+    <i class="fa-solid fa-fire text-orange-400 mr-2"></i>
+    <span class="font-bold">Popularity:</span> {{ moviesdetails.popularity }}
+  </p>
+
+  <p>
+    <i class="fa-solid fa-user-shield text-purple-400 mr-2"></i>
+    <span class="font-bold">Adult:</span> {{ moviesdetails.adult ? 'Yes' : 'No' }}
+  </p>
+</div>
+
+    </div>
+  </div>
+</div>

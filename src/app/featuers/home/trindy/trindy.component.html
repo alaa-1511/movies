@@ -1,0 +1,70 @@
+<swiper-container
+  class="mySwiper"
+  space-between="20"
+  pagination="true"
+  pagination-clickable="true"
+  loop="true"
+>
+  <div class="swiper-pagination" slot="container-end"></div>
+
+  @for (chunk of movieChunks; track $index) {
+    <swiper-slide>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        @for (movie of chunk; track $index) {
+          <div [routerLink]="['/datels', movie.id]" class="relative group">
+
+            <!-- صورة الفيلم -->
+            <img
+              [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+              class="w-full h-72 object-cover rounded-2xl shadow-lg cursor-pointer transition-transform duration-700 group-hover:scale-105"
+              alt="{{ movie.title }}" />
+
+
+            <span
+              (click)="toggleFav(movie.id); $event.stopPropagation()"
+              class="absolute top-2 right-2 text-3xl p-2 rounded-full cursor-pointer transition duration-300">
+              <i
+                class="fa-solid fa-heart"
+                [ngClass]="isFavorite(movie.id) ? 'text-orange-600' : 'text-gray-400'">
+              </i>
+            </span>
+          </div>
+        }
+      </div>
+    </swiper-slide>
+  }
+</swiper-container>
+
+
+
+<div   class=" cursor-pointer  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-20">
+  @for (movie of moviesTrending; track $index) {
+    <div class="slide-card relative  rounded-lg overflow-hidden shadow-lg group">
+
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110 rounded"
+        alt="{{ movie.title }}"
+      />
+
+
+      <div [routerLink]="['/datels', movie.id]" class="overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 rounded
+                  transition-opacity duration-700 group-hover:opacity-100
+                  flex flex-col items-center justify-center text-center p-4">
+
+        <h3 class="text-lg font-semibold text-white mb-2">{{ movie.title }}</h3>
+        <p class="text-sm text-gray-200">{{ movie.release_date }}</p>
+      </div>
+          <span
+  (click)="toggleFav(movie.id)"
+  class="absolute top-2 right-2 text-3xl p-2 rounded-full cursor-pointer transition duration-300">
+  <i
+    class="fa-solid fa-heart"
+    [ngClass]="isFavorite(movie.id) ? 'text-orange-600' : 'text-gray-400'">
+  </i>
+</span>
+
+    </div>
+  }
+</div>
+

@@ -1,0 +1,101 @@
+
+<swiper-container
+  class="mySwiper"
+  [slidesPerView]="1"
+  [navigation]="true"
+  [pagination]="{ clickable: true }"
+  [loop]="true"
+>
+  @for (movie of moviesTrending; track $index) {
+    <swiper-slide [routerLink]="['/datels', movie.id]">
+      <div class="relative w-full h-[300px]">
+
+        <img
+          class="w-full h-[500px] object-cover cursor-pointer"
+          [src]="'https://image.tmdb.org/t/p/original' + movie.backdrop_path"
+          [alt]="movie.title"
+        />
+
+
+        <div class="absolute inset-0 bg-black/60"></div>
+
+
+        <div
+          class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer text-center text-white z-10 px-6"
+        >
+          <h2 class="text-4xl font-bold drop-shadow-lg">
+            {{ movie.title }}
+          </h2>
+          <p class="mt-4 max-w-3xl">{{ movie.overview }}</p>
+        </div>
+      </div>
+    </swiper-slide>
+  }
+</swiper-container>
+
+
+
+<section class="dark:bg-gray-900 bg-white min-h-screen">
+
+  <div class="grid grid-cols-1 sm:grid-cols-4 gap-6">
+
+    <button
+    (click)="isSidebarOpen = !isSidebarOpen"
+    class="fixed bottom-50 left-0 z-50 sm:hidden
+           p-3 rounded-full bg-orange-500 text-white shadow-lg">
+    <i class="fas fa-cog"></i>
+  </button>
+
+    <aside class="sm:col-span-1  bg-gray-50 dark:bg-gray-900 p-4"  [class.hidden]="!isSidebarOpen && screenWidth < 640">
+      <ul class="space-y-2 font-medium">
+
+       <li> <a routerLink="action" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Action</span> </a>
+       </li>
+        <li> <a routerLink="animation" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Animation</span> </a>
+        </li>
+        <li> <a routerLink="comedy" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Comedy</span> </a>
+         </li>
+        <li> <a routerLink="crime" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Crime</span> </a>
+        </li>
+         <li> <a routerLink="drama" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Drama</span> </a>
+         </li>
+         <li> <a routerLink="family" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Family</span> </a>
+        </li>
+         <li> <a routerLink="fantasy" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Fantasy</span> </a>
+         </li>
+          <li> <a routerLink="history" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">History</span> </a>
+          </li>
+           <li> <a routerLink="horror" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Horror</span> </a>
+           </li>
+           <li> <a routerLink="music" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Music</span> </a>
+           </li>
+            <li> <a routerLink="romance" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Romance</span> </a>
+           </li>
+           <li> <a routerLink="science-fiction" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Science Fiction</span> </a>
+           </li>
+           <li> <a routerLink="thriller" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Thriller</span> </a>
+          </li>
+          <li> <a routerLink="mystery" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Mystery</span> </a>
+           </li>
+            <li> <a routerLink="documentary" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Documentary</span> </a>
+           </li>
+            <li> <a routerLink="animation" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Animation</span> </a>
+          </li>
+           <li> <a routerLink="war" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">War</span> </a>
+          </li>
+           <li> <a routerLink="western" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Western</span> </a>
+      </li>
+      <li> <a routerLink="adventure" routerLinkActive="bg-gray-200 dark:bg-gray-700" class="flex items-center p-2 text-orange-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group"> <span class="ms-3">Adventure</span> </a> </li>
+
+      </ul>
+    </aside>
+
+
+    <main class="sm:col-span-3 ">
+
+      <div class="">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</section>

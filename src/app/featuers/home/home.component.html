@@ -1,0 +1,93 @@
+
+
+<div class="bg-white/100 dark:bg-gray-900">
+
+
+
+<swiper-container
+  class="mySwiper"
+  [slidesPerView]="1"
+  [navigation]="true"
+  [pagination]="{ clickable: true }"
+  [loop]="true"
+>
+  @for (movie of moviesList; track $index) {
+    <swiper-slide [routerLink]="['/datels', movie.id]">
+      <div class="relative w-full h-[500px]">
+
+        <img
+          class="w-full h-[500px] object-cover cursor-pointer"
+          [src]="'https://image.tmdb.org/t/p/original' + movie.backdrop_path"
+          [alt]="movie.title"
+        />
+
+
+        <div class="absolute inset-0 bg-black/60"></div>
+
+
+        <div
+          class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer text-center text-white z-10 px-6"
+        >
+          <h2 class="text-4xl font-bold drop-shadow-lg">
+            {{ movie.title }}
+          </h2>
+          <p class="mt-4 max-w-3xl">{{ movie.overview }}</p>
+        </div>
+      </div>
+    </swiper-slide>
+  }
+</swiper-container>
+
+
+
+ <swiper-container
+  class="mySwiper py-20"
+  [slidesPerView]="8"
+  [grid]="{ rows: 2, fill: 'row' }"
+  [spaceBetween]="0"
+  [pagination]="{ clickable: true }"
+  [navigation]="true"
+>
+  @for (movie of moviesList; track $index) {
+    <swiper-slide [routerLink]="['/datels', movie.id]">
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+        alt="{{ movie.title }}"
+        class="w-full h-48 object-cover cursor-pointer"
+      />
+    </swiper-slide>
+  }
+</swiper-container>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex ">
+<ul class="flex space-x-4  pe-4 pb-20">
+    <li>
+    <a  routerLinkActive="text" routerLink="/home/trindy" class="text-gray-950 dark:text-white text-4xl font-medium ">Trending</a>
+  </li>
+  <li>
+    <a  routerLinkActive="text"  routerLink="/home/puplar"  class="text-gray-950 dark:text-white text-4xl font-medium ">Popular</a>
+  </li>
+
+
+
+</ul>
+</div>
+
+<router-outlet></router-outlet>
+
+
+</div>
+
+
+

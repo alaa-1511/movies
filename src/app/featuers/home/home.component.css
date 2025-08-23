@@ -1,0 +1,29 @@
+
+.text{
+  color:orange;
+
+  border-bottom: 2px solid orange;
+
+}
+
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+
+  transition: background-color 0.3s ease;
+}
+
+.layer:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+
+.mySwiper .swiper-pagination {
+  margin-top: 50px;
+  position: static;
+}

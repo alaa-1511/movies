@@ -1,0 +1,30 @@
+<div class= "  dark:bg-gray-900 bg-white  ">
+  <div class="my-10 relative group h-16">
+
+  <div
+    class="absolute bg-gradient-to-r from-orange-500 to-transparent w-150 h-7 left-1 bottom-5
+           transition-all duration-700 group-hover:h-2">
+  </div>
+  <h1 class="text-4xl font-bold text-gray-800 dark:text-white relative z-10 cursor-pointer">
+    Comedy Movies
+  </h1>
+</div>
+
+ <div class="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  pb-10 ">
+  @for (action of moviecomedyList; track $index) {
+  <div class="rounded-2xl shadow-md border-2  border-orange-500 cursor-pointer  "[routerLink]="['/datels', action.id]">
+    <img [src]="'https://image.tmdb.org/t/p/w500' + action.poster_path" alt="{{ action.title }}" class="w-full  rounded-t-2xl">
+ <h3 class="text-lg text-orange-500 ps-1 font-semibold my-2">
+  {{ action.title }}
+</h3>
+
+
+    <p class="dark:text-gray-600 text-gray-800 pb-3 ps-1">{{ action.overview.split(' ').slice(0, 10).join(' ') }}</p>
+    <p class="dark:text-gray-400 text-gray-600 ps-1">{{ action.release_date  }}</p>
+  </div>
+
+  }
+</div>
+
+
+</div>

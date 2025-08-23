@@ -1,0 +1,155 @@
+
+
+
+  <nav
+  [ngClass]="{
+    'bg-gray-900 shadow-md  text-white sm:bg-gray-900': isScrolled,
+    'md:bg-transparent text-white sm:bg-gray-900': !isScrolled
+  }"
+  class="border-gray-200 fixed w-full z-50 top-0 start-0"
+>
+  <div
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4"
+  >
+
+    <div class="flex items-center space-x-6 rtl:space-x-reverse">
+      <a routerLink="home" class="flex items-center">
+        <img
+
+          src="/jkj/img mealify10.png"
+          class="w-32"
+          alt="Logo"
+        />
+
+      </a>
+    </div>
+
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"
+        />
+      </svg>
+    </button>
+
+
+    <div
+      class="hidden grow w-full md:flex md:w-auto items-center"
+      id="navbar-default"
+    >
+
+      <ul
+        class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 text-white"
+      >
+      @if (isLogin === true) {
+        <li>
+          <a
+            routerLink="home"
+            routerLinkActive="spe-text"
+            class="hover:text-orange-500  transition"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="tvshow"
+            routerLinkActive="spe-text"
+            class="hover:text-orange-500  transition"
+            >TV Shows</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="favtatie"
+            routerLinkActive="spe-text"
+            class="hover:text-orange-500 transition"
+            >Favorites</a
+          >
+        </li>
+      }
+      </ul>
+
+
+      <ul
+        class="flex items-center space-x-4 ms-auto text-white"
+      >
+
+          @if(isLogin === false){
+                 <li>
+          <a
+            routerLink="login"
+            routerLinkActive="spe-text"
+            class="hover:text-orange-500 transition"
+            >Login</a
+          >
+        </li>
+           <li>
+          <a
+            routerLink="register"
+            routerLinkActive="spe-text"
+            class="hover:text-orange-500 transition"
+            >Register</a
+          >
+        </li>
+
+          }@else {
+            <li>
+          <li>
+          <a href="#" class="hover:text-orange-500 text-xl"
+            ><i class="fab fa-facebook"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-orange-500 text-xl"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-orange-500 text-xl"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+
+        <li> <a href="#" class="hover:text-orange-500 text-xl"
+            ><i class="fab fa-linkedin"></i
+          ></a></li>
+          <li><a href="#" class="hover:text-orange-500 text-xl"
+            ><i class="fab fa-github"></i
+          ></a></li>
+          <li>
+          <button (click)="toggleTheme()" class="text-xl">
+            <i *ngIf="!isDark" class="fas fa-moon "></i>
+            <i *ngIf="isDark" class="fas fa-sun text-orange-500"></i>
+          </button>
+        </li>
+
+        
+        <li>
+          <a (click)="onSignOut()"
+            routerLinkActive="spe-text"
+            class="hover:text-orange-500 transition cursor-pointer"
+            >SignOut</a
+          >
+        </li>
+      }
+      </ul>
+    </div>
+  </div>
+</nav>

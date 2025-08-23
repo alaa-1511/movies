@@ -1,0 +1,30 @@
+
+<div class="p-4 bg-white/100 dark:bg-gray-900">
+  <h2 class="text-4xl font-bold my-4 text-orange-600 text-center">Favorite Movies</h2>
+  <p class="text-center text-3xl text-gray-600 mb-10">Here are your favorite movies.</p>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div *ngFor="let fav of favoriteMovies" class="relative border border-orange-600 rounded-lg overflow-hidden">
+
+
+      <button
+        (click)="removeFromFav(fav.id)"
+        class="absolute top-2 right-2 bg-orange-600 text-white p-2 rounded-full shadow hover:bg-orange-700 transition">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500' + fav.poster_path"
+        alt="{{ fav.title }}"
+        class="w-full h-64 object-cover rounded-t-lg shadow-lg"
+      />
+
+      <h3 class="text-gray-500 p-3 text-center">{{ fav.title }}</h3>
+      <p class="text-gray-400 text-sm px-3 pb-5 text-center">
+        {{ fav.overview.slice(0,100) }}
+      </p>
+    </div>
+  </div>
+</div>
+
+
