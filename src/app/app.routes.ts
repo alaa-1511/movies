@@ -75,7 +75,12 @@ export const routes: Routes =[
 
        },
      {path: 'favtatie', component:FavtatieComponent },
-      { path:'datels/:id' ,component: DatelsComponent ,data: { renderMode: 'server' } ,   },
+      {
+  path: 'datels/:id',
+  loadComponent: () => import('./details/details.component').then(m => m.DetailsComponent),
+  data: { renderMode: 'browser' }
+}
+
 
 
 
