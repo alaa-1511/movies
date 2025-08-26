@@ -4,5 +4,13 @@ export const serverRoutes: ServerRoute[] = [
   {
     path: '**',
     renderMode: RenderMode.Prerender
+  },
+ {
+    path: 'datels/:id',
+    renderMode: RenderMode.Server
   }
 ];
+
+
+
+

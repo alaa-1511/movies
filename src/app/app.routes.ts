@@ -25,10 +25,10 @@ import { ThrillerComponent } from './featuers/thriller/thriller.component';
 import { WarComponent } from './featuers/war/war.component';
 import { WesternComponent } from './featuers/western/western.component';
 import { FavtatieComponent } from './featuers/favtatie/favtatie.component';
-import { DatelsComponent } from './featuers/datels/datels.component';
 import { TrindyComponent } from './featuers/home/trindy/trindy.component';
 
 import { PuplarComponent } from './featuers/home/puplar/puplar.component';
+import { DatelsComponent } from './featuers/datels/datels.component';
 
 
 
@@ -75,11 +75,11 @@ export const routes: Routes =[
 
        },
      {path: 'favtatie', component:FavtatieComponent },
-      {
-  path: 'datels/:id',
-  loadComponent: () => import('./details/details.component').then(m => m.DetailsComponent),
-  data: { renderMode: 'browser' }
-}
+
+  {path: 'datels/:id', component: DatelsComponent },
+
+
+
 
 
 
