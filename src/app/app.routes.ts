@@ -29,6 +29,7 @@ import { TrindyComponent } from './featuers/home/trindy/trindy.component';
 
 import { PuplarComponent } from './featuers/home/puplar/puplar.component';
 import { DatelsComponent } from './featuers/datels/datels.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 
 
@@ -77,14 +78,7 @@ export const routes: Routes =[
      {path: 'favtatie', component:FavtatieComponent },
 
   {path: 'datels/:id', component: DatelsComponent },
-
-
-
-
-
-
-
-
+  {path: 'spinner', component: SpinnerComponent},
 
         {path: '**' ,component:NotfoundComponent},
 

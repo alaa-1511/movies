@@ -5,11 +5,12 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { FlowbiteService } from './core/services/flowbite.service';
 import { initFlowbite } from 'flowbite';
 
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet , FooterComponent],
+  imports: [RouterOutlet , FooterComponent ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'movies';

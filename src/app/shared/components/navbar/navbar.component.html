@@ -4,7 +4,7 @@
   <nav
   [ngClass]="{
     'bg-gray-900 shadow-md  text-white sm:bg-gray-900': isScrolled,
-    'md:bg-transparent text-white sm:bg-gray-900': !isScrolled
+    'md:bg-transparent text-white sm:bg-gray-900': !isScrolled ,
   }"
   class="border-gray-200 fixed w-full z-50 top-0 start-0"
 >
@@ -140,7 +140,7 @@
           </button>
         </li>
 
-        
+
         <li>
           <a (click)="onSignOut()"
             routerLinkActive="spe-text"

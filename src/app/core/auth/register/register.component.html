@@ -46,7 +46,7 @@
 
       <ul class="mt-1.5 list-disc list-inside">
         @if(registerForm.get('email')?.getError('required')){
-        <li> Password is required</li>
+        <li> email is required</li>
         }
         @else if (registerForm.get('email')?.getError('email')) {
           <li>Please enter a valid email address.</li>

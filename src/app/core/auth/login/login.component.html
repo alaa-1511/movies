@@ -18,7 +18,7 @@
 
       <ul class="mt-1.5 list-disc list-inside">
         @if(loginForm.get('email')?.getError('required')){
-        <li> Password is required</li>
+        <li> Email is required</li>
         }
         @else if (loginForm.get('email')?.getError('email')) {
           <li>Please enter a valid email address.</li>

@@ -7,7 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class TvmoviesService {
 
+
   constructor(   private readonly httpClient: HttpClient ) { }
+
+// Search with optional genre
+
 
 
 
